@@ -1,0 +1,13 @@
+automation:
+  - alias: "ChatGPT Response"
+    trigger:
+      platform: state
+      entity_id: input_text.chatgpt_input
+    action:
+      - service: rest_command.chatgpt_query
+        data:
+          query: "{{ states('input_text.chatgpt_input') }}"
+      - service: tts.google_translate_say
+        data_template:
+          entity_id: media_player.your_speaker
+          message: "{{ state_attr('rest_command.chatgpt_query', 'response') }}"

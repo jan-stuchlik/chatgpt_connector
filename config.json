@@ -1,0 +1,12 @@
+{
+    "name": "ChatGPT Connector",
+    "version": "1.0",
+    "slug": "chatgpt_connector",
+    "description": "Connect ChatGPT to Home Assistant",
+    "startup": "application",
+    "boot": "auto",
+    "ports": {
+        "5005/tcp": 5005
+    },
+    "host_network": true
+}
