@@ -1,6 +1,9 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.11-alpine3.16
 FROM ${BUILD_FROM}
 
+# Instalace pip
+RUN apk add --no-cache py3-pip
+
 # Kopírování souborů
 WORKDIR /usr/src/app
 COPY requirements.txt .
@@ -8,9 +11,7 @@ COPY run.sh .
 COPY chatgpt_connector.py .
 
 # Instalace závislostí
-RUN \
-    python3 -m pip install --no-cache-dir --upgrade pip && \
-    python3 -m pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Nastavení oprávnění pro run.sh
 RUN chmod a+x run.sh
