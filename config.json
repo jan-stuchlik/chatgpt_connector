@@ -1,12 +1,20 @@
 {
     "name": "ChatGPT Connector",
-    "version": "1.0",
+    "version": "1.0.0",
     "slug": "chatgpt_connector",
-    "description": "Connect ChatGPT to Home Assistant",
+    "description": "Propojení ChatGPT s Home Assistant",
+    "url": "https://github.com/jan-stuchlik/chatgpt_connector",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
     "startup": "application",
     "boot": "auto",
     "ports": {
         "5005/tcp": 5005
+    },
+    "options": {
+        "openai_api_key": ""
+    },
+    "schema": {
+        "openai_api_key": "str"
     },
     "host_network": true
 }

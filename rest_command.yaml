@@ -1,6 +1,6 @@
 rest_command:
   chatgpt_query:
-    url: "http://<IP_ADRESA_SERVERU>:5005/chat"
+    url: "http://localhost:5005/chat"
     method: POST
     headers:
       Content-Type: application/json

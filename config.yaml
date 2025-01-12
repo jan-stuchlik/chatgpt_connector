@@ -1,0 +1,25 @@
+name: ChatGPT Connector
+version: 1.0.0
+slug: chatgpt_connector
+description: Propojení ChatGPT s Home Assistant
+url: https://github.com/jan-stuchlik/chatgpt_connector
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: application
+boot: auto
+ports:
+  5005/tcp: 5005
+options:
+  openai_api_key: ""
+  system_prompt: "Jsi český hlasový asistent."
+  model: "gpt-3.5-turbo"
+schema:
+  openai_api_key: str
+  system_prompt: str?
+  model: list(gpt-3.5-turbo|gpt-4)?
+init: false
+host_network: true 
